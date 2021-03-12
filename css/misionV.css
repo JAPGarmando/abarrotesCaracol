@@ -87,7 +87,6 @@ nav{
 }
 
 .nav-links{
-  
   display: flex;
   justify-content: space-around;
   width: 30%;
@@ -227,9 +226,6 @@ img {
         width: 80%;
     }
 
-    footer {
-        position: absolute;
-    }
 }
 
 
