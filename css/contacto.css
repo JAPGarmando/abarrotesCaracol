@@ -189,7 +189,7 @@ img {
 .boton {
     background-color: rgb(124, 228, 228);
     border-radius: 20px;
-    width: 300px;
+    width: 60%;
     color: black;
     border: none;
 }
