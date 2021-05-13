@@ -7,13 +7,14 @@ const carrito = {
 
 };
 
-const addProduct = (product) => {
+const addProduct = (product, id) => {
     carrito.productos.push(product);
     localStorage.setItem('products', JSON.stringify(carrito));
     // console.log(JSON.parse(localStorage.getItem('products')));
     calcularTotales();
     sumarCarrito();
     showSnackbar(`Se ha agregado el producto "${product.nombre}" con éxito`);
+    document.getElementById(id).click();
 }
 
 const calcularTotales = () => {
@@ -38,7 +39,7 @@ const sumarCarrito = () => {
 }
 
 const setCantidad = (cont) => {
-    cont.innerHTML = 3
+    cont.innerHTML++;
 }
 
 

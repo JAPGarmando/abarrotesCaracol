@@ -130,6 +130,10 @@ li {
     cursor: pointer;
 }
 
+.vaciar {
+    font-family: 'Bungee', cursive;
+    font-size: 20px;
+}
 
 .burger div{
     width:  25px;
@@ -138,7 +142,11 @@ li {
     margin: 5px;
 }
 
-
+.promos {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Bungee', cursive;
+}
 
 footer{
     padding-top: 30px;
