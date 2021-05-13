@@ -181,7 +181,7 @@ img {
 }
 
 .tablaCarrito {
-    width: 46%;
+    width: 36vw;
     border-style: solid;
     border-color: blue;
     border-width: 1px;
@@ -198,6 +198,36 @@ img {
     border-style: solid;
     border-width: 1px;
     border-color: blue;
+}
+
+.buttonsContainer {
+    flex: 0.1;
+    width: 48vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.botonComprar {
+    border-style: solid;
+    border-color: black;
+    border-radius: 7px;
+    border-width: 1px;
+    background-color: rgb(24, 60, 80);
+    color: white;
+    padding: 8px 24px;
+}
+
+.botonComprar:hover {
+    background-color: #e0e0e0;
+    color: black;
+}
+
+.botonComprar:active {
+    background-color: #1a237e;
+    color: white;
 }
 
 .parrafov{
