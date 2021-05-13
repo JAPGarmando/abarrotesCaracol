@@ -1,9 +1,10 @@
-const calcularProductos = (carrito,producto) => {
+const calcularProductos = producto => {
     try
     {
         let cantidad = 0;
-        carrito.forEach(element => {
-            if(element===producto)
+        const data = JSON.parse(localStorage.getItem('products'));
+        data.productos.forEach(element => {
+            if(element.nombre===producto)
             {
                 cantidad++;
             }
@@ -17,7 +18,7 @@ const calcularProductos = (carrito,producto) => {
             msg: 'Error al calcular cantidad de productos',
             error: ex
         };
-        console.log('ERROR',response);
+        console.log('ERROR: ',response);
     }
 };
 
@@ -29,24 +30,67 @@ try
     {
         let tableContent = `
         <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Precio por producto</th>
-            <th>Subtotal</th>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">Producto</th>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">Cantidad</th>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">Precio por producto</th>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">Subtotal</th>
         </tr>
         `;
+
+        let subtotal = 0;
+
         data.productos.forEach(producto => {
-            const cantidad = calcularProductos(data.productos,producto.nombre);
+            const cantidad = calcularProductos(producto.nombre);
             tableContent += `
             <tr>
-                <td>${producto.nombre}</td>
-                <td>${cantidad}</td>
-                <td>${producto.precio}</td>
-                <td>${cantidad*producto.precio}</td>
+                <td style="color:white;">${producto.nombre}</td>
+                <td style="color:white;">${1}</td>
+                <td style="color:white;">$${producto.precio}</td>
+                <td style="color:white;">$${producto.precio}</td>
             <tr>
             `;
+            subtotal += producto.precio;
         });
+
+        const iva = subtotal * 0.16;
+        const total = subtotal + iva;
+
+        tableContent += `
+        <tr>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">Subtotal</th>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">IVA</th>
+            <th style="border-bottom-style:solid;border-color:white;border-width: 1px;color:white">Total</th>
+        </tr>
+        <tr>
+            <td style="color:white;">$${subtotal}</td>
+            <td style="color:white;">$${iva}</td>
+            <td style="color:white;">$${total}</td>
+        </tr>
+        `;
         document.getElementById('tablaCarrito').innerHTML = tableContent ;
+        document.getElementById('btnComprar').addEventListener('click',() => {
+            try
+            {
+                const dialog = confirm(`¿Está seguro de finalizar la compra?\nEl total a pagar es: ${total}`);
+                console.log('INFO: ',{
+                    event: 'Compra finalizada',
+                    dialog
+                });
+                if(dialog)
+                {
+                    window.location.href = '../promociones.html';
+                }
+            }
+            catch(err)
+            {
+                const res = {
+                    event: 'Error en confirm',
+                    error: err,
+                    msg: 'Error al finalizar la compra'
+                };
+                console.log('ERROR: ',res);
+            }
+        });
     }
     else
     {
@@ -54,7 +98,7 @@ try
             event: 'Error al recibir info del localstorage',
             msg: 'El dato recibido no es un objeto'
         };
-        console.log('INFO',response);
+        console.log('INFO: ',response);
     }
 }
 catch(ex)
@@ -64,5 +108,21 @@ catch(ex)
         msg: 'Ocurrió un error al obtener el carrito del LocalStorage',
         error: ex
     };
-    console.log('ERROR',response);
+    console.log('ERROR: ',response);
 }
+
+document.getElementById('btnCancelar').addEventListener('click',() => {
+    try
+    {
+        window.location.href = '../promociones.html';
+    }
+    catch(ex)
+    {
+        const response = {
+            event: 'Error en botón cancelar',
+            msg: 'Ocurrió un error al navegar a promociones.html',
+            error: ex
+        };
+        console.log('ERROR: ',response);
+    }
+});
