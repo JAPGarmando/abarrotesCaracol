@@ -1,0 +1,264 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Bungee', cursive;
+}
+
+label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #0f161b;
+    font-family: 'Bungee', cursive;
+}
+
+.todo {
+    height: 30px;
+    padding-top: 10px;
+}
+
+.banner {
+    height: 300px;
+    width: 95pt;
+    background-color: rgb(233, 233, 233);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.29); 
+    box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.29);
+    background-image: url('../imagenes/banner.jpg');
+    background-position: center;
+    background-size: contain;
+}
+
+.contenedor {
+    background: rgb(81,115,4);
+    background: linear-gradient(10deg, rgba(81,115,4,1) 0%, rgba(0,255,237,1) 100%);
+    height: 100%;
+}
+
+.productos {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.titulo {
+    font-family: 'Bungee', cursive;
+    font-size: 50px;
+}
+
+.producto {
+    height: 250px;
+    width: 28%;
+    background-color: rgb(233, 233, 233);
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.29); 
+    box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.29);
+}
+
+.uno {
+    background-image: url('../imagenes/uno.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.dos {
+    background-image: url('../imagenes/dos.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.tres {
+    background-image: url('../imagenes/tres.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.logo{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li{
+    list-style:none;
+}
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+
+.burger div{
+    width:  25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+
+
+footer{
+    bottom: 0;
+    background: #0f161b;
+    height: auto;
+    width: 100%;
+    font-family: 'Bungee', cursive;
+    
+}
+
+img {
+    width: 30px;
+}
+
+.footer-content{
+    display: flex;
+    background: #0f161b;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fcfcfc;
+}
+
+.space {
+    height: 10px;
+    padding: 30px;
+}
+
+.footer-content h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+
+}
+
+
+.form {
+    top: 30px;
+    display: flex;
+    width: 50%;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: chocolate;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.formContent {
+    all: inherit;
+}
+
+.formBanner {
+    width: 40vw;
+    height: 1px;
+    background-color: black;
+}
+
+.tablaCarrito {
+    width: 46%;
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+    margin-top: 16px;
+}
+
+.tableHeader {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+}
+
+.tableData {
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+}
+
+.parrafov{
+    border-radius: 5px;
+    border-color: black;
+    
+}
+
+.redes_sociales {
+    display: flex;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color:  rgb(24, 60, 80);
+    border-radius: 20px;
+    color: white;
+}
+
+.fa {
+    color: white;
+    font-size: 30px;
+} 
+
+.fa:hover {
+    color: rgb(211, 211, 211);
+    font-size: 33px;
+}
+.boton {
+    background-color: rgb(124, 228, 228);
+    border-radius: 20px;
+    width: 300px;
+    color: black;
+    border: none;
+}
+
+@media screen and (min-width:1397px){
+    .banner {
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width:1230px){
+    nav{
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .form {
+        width: 80%;
+    }
+
+}
+
+
+
+
