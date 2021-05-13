@@ -45,6 +45,10 @@ nav{
     font-size: 50px;
 }
 
+.cantidad {
+    font-family: 'Arial', cursive;
+}
+
 .producto {
     height: 430px;
     width: 28%;
@@ -94,6 +98,10 @@ nav{
     letter-spacing: 5px;
     font-size: 20px;
 }
+#contador {
+    font-family: 'Bungee', cursive;
+    font-size: 20px;
+}
 
 .nav-links{
   
@@ -105,6 +113,11 @@ nav{
 .nav-links li{
     list-style:none;
 }
+
+li {
+    padding-left: 25px;
+}
+
 .nav-links a{
     color: white;
     text-decoration: none;
@@ -136,6 +149,37 @@ footer{
     font-family: 'Bungee', cursive;
     
 }
+
+.cantidad-producto {
+    float: right;
+    width: 140px;
+    height: 50px;
+    background-color: rgb(202, 202, 202);
+    border: 3px solid rgb(110, 110, 110);
+    border-radius: 30px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 900;
+    color: rgb(39, 39, 39);
+    font-size: 30px;
+}
+
+.addremove {
+    background-color: rgb(248, 247, 247);
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+    width: 50px;
+}
+
+.addremove:hover {
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
 
 img {
     width: 30px;
@@ -212,6 +256,48 @@ img {
 }
 
 
-
-
-
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    font-family: 'Bungee', cursive;
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

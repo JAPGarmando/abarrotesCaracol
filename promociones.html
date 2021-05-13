@@ -29,6 +29,7 @@
             <li><a href="./contacto.html">Contacto</a></li>
             <li><a href="./promociones.html">Promociones</a></li>
             <li><a href="./misionV.html">Nosotros</a></li>
+            <li><a href="./carrito.html"><i class="fa fa-shopping-cart"> <span id="contador">0</span></i>  </a></li>
         </ul>
         </nav>
         <div>
@@ -36,26 +37,91 @@
         </div>
         <div class="productos">
             <div class="producto uno">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="cantidad" onclick="cantidad(this.child)">0</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Desodorante',
+                    precio: 34.90
+                })">+</div>
             </div>
-            <div class="producto dos">
+            </div>
+            <div class="producto dos" >
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Jumex 3x30$',
+                    precio: 30
+                })">+</div>
+            </div>
             </div>
             <div class="producto tres">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="cantidad">0</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Oreo 2x20',
+                    precio: 20
+                })">+</div>
+            </div>
             </div>
         </div>
         <div class="productos">
             <div class="producto cuatro">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Leche condensada',
+                    precio: 22.90
+                })">+</div>
+            </div>
             </div>
             <div class="producto cinco">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Halls Extra Strong',
+                    precio: 8
+                })">+</div>
+            </div>
             </div>
             <div class="producto seis">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Mazapán Gigante chocolate',
+                    precio: 13.5
+                })">+</div>
+            </div>
             </div>
         </div>
         <div class="productos">
             <div class="producto tres">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Oreo 2x20',
+                    precio: 20
+                })">+</div>
+            </div>
             </div>
             <div class="producto uno">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Jumex 3x30$',
+                    precio: 30
+                })">+</div>
+            </div>
             </div>
             <div class="producto dos">
+            <div class="cantidad-producto">
+                <div class="addremove">-</div>
+                <div class="addremove" onclick="addProduct({
+                    nombre: 'Desodorante',
+                    precio: 34.90
+                })">+</div>
+            </div>
             </div>
         </div>
         <footer>
@@ -74,7 +140,9 @@
                 </div>
             </div>
     </div>
+    <div id="snackbar">Se ha agregado el producto con éxito</div>
     </footer>
+    <script src="./js/promociones.js"></script>
 </body>
 
 </html>
