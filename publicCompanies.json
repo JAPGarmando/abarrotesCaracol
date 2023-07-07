@@ -1,4 +1,5 @@
-[
+{
+  "contents": [
   {
     "id": "89b9a3b0-4a85-4d7e-9adf-4203fe18d783",
     "__typename": "Company",
@@ -31880,3 +31881,4 @@
     "website": "https://kelloggs.com"
   }
 ]
+}
